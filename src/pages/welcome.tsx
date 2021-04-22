@@ -9,15 +9,22 @@ import {
   View,
 } from 'react-native';
 
+import Feather from 'react-native-vector-icons/Feather';
+import {useNavigation} from '@react-navigation/core';
+
 import wateringImg from '../assets/watering.png';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
-import Feather from 'react-native-vector-icons/Feather';
-
 
 Feather.loadFont();
 
 export function Welcome() {
+  const navigation = useNavigation();
+
+  function handleStart() {
+    navigation.navigate('UserIdentification');
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.wrapper}>
@@ -34,8 +41,11 @@ export function Welcome() {
           sempre que precisar.
         </Text>
 
-        <TouchableOpacity style={styles.button} activeOpacity={0.7}>
-            <Feather name="chevron-right" style={styles.buttonIcon} />
+        <TouchableOpacity
+          style={styles.button}
+          activeOpacity={0.7}
+          onPress={handleStart}>
+          <Feather name="chevron-right" style={styles.buttonIcon} />
         </TouchableOpacity>
       </View>
     </SafeAreaView>
