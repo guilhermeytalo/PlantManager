@@ -39,7 +39,6 @@ export function UserIdentification(){
         setName(value);
     }
 
-
     function handleSubmit() {
       navigation.navigate('Confirmation');
     }
