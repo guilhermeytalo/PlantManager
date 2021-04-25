@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {ActivityIndicator, StyleSheet, Text, View} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import {EnvironmentButton} from '../components/EnvironmentButton';
 
@@ -56,6 +56,37 @@ export function PlantSelect() {
     setFilteredPlants(filtered);
   }
 
+  async function fetchPlants() {
+    const {data} = await api
+    .get(`plants?_sort=name&_order=asc&_page=${page}&_limit=8`);
+
+    if(!data){
+      return setLoading(true);
+    }
+
+    if(page > 1){
+      setPlants(oldValue => [...oldValue, ...data]);
+      setFilteredPlants(oldValue => [...oldValue, ...data]);
+    } else {
+      setPlants(data);
+      setFilteredPlants(data);
+    }
+
+    setLoading(false);
+    setLoadingMore(false);
+  }
+
+
+  function handleFetchMore(distance: number) {
+    if(distance < 1){
+      return;
+    }
+
+    setLoadingMore(true);
+    setPage(oldValue => oldValue + 1);
+    fetchPlants();
+  }
+
   useEffect(() => {
     handleEnvironmentSelected('all');
   } , [plants]);
@@ -78,13 +109,6 @@ export function PlantSelect() {
   }, []);
 
   useEffect(() => {
-    async function fetchPlants() {
-      const {data} = await api
-      .get(`plants?_sort=name&_order=asc`);
-      setPlants(data);
-      setLoading(false);
-    }
-
     fetchPlants();
   }, []);
 
@@ -125,6 +149,15 @@ export function PlantSelect() {
           )}
           showsVerticalScrollIndicator={false}
           numColumns={2}
+          onEndReachedThreshold={0.1}
+          onEndReached={({ distanceFromEnd }) => 
+              handleFetchMore(distanceFromEnd)
+          }
+          ListFooterComponent={
+            loadingMore 
+            ? <ActivityIndicator color={colors.green} />
+            : <></>
+          }
         />
       </View>
     </View>
