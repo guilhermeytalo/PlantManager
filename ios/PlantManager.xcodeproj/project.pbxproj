@@ -14,6 +14,7 @@
 		1CA26A93E5674A2B8C1BBC68 /* Jost-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA964DED856845159916F811 /* Jost-SemiBold.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		933DF18D1E1745709FA7B1C8 /* Jost-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA4016EB96F74010A8D67365 /* Jost-Bold.ttf */; };
+		9AE582E12634F7A70009AB31 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE582E02634F7A70009AB31 /* Empty.swift */; };
 		A40403764C764E35ADDC9313 /* Jost-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D945D3184C14E22A5F25BBE /* Jost-Medium.ttf */; };
 		EA967D94FC372B85DAB27A95 /* libPods-PlantManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 535330BE86D33A5A0ACE4C07 /* libPods-PlantManager.a */; };
 		ED3A8EA3C9415B0DA70566ED /* libPods-PlantManager-PlantManagerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F1EDD1D8077D9CD642347B /* libPods-PlantManager-PlantManagerTests.a */; };
@@ -44,13 +45,15 @@
 		4C3B356EE471BF0675E1F8B8 /* Pods-PlantManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantManager.debug.xcconfig"; path = "Target Support Files/Pods-PlantManager/Pods-PlantManager.debug.xcconfig"; sourceTree = "<group>"; };
 		535330BE86D33A5A0ACE4C07 /* libPods-PlantManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlantManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C78A5978F9BF1C99EBF9181 /* Pods-PlantManager-PlantManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantManager-PlantManagerTests.debug.xcconfig"; path = "Target Support Files/Pods-PlantManager-PlantManagerTests/Pods-PlantManager-PlantManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6D945D3184C14E22A5F25BBE /* Jost-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Jost-Medium.ttf"; path = "../assets/fonts/Jost-Medium.ttf"; sourceTree = "<group>"; };
-		743937843B384CB9983E9DFF /* Jost-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Jost-Regular.ttf"; path = "../assets/fonts/Jost-Regular.ttf"; sourceTree = "<group>"; };
+		6D945D3184C14E22A5F25BBE /* Jost-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Jost-Medium.ttf"; path = "../assets/fonts/Jost-Medium.ttf"; sourceTree = "<group>"; };
+		743937843B384CB9983E9DFF /* Jost-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Jost-Regular.ttf"; path = "../assets/fonts/Jost-Regular.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PlantManager/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84F1EDD1D8077D9CD642347B /* libPods-PlantManager-PlantManagerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlantManager-PlantManagerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EA67AD8BB2D694804099FE9 /* Pods-PlantManager-PlantManagerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlantManager-PlantManagerTests.release.xcconfig"; path = "Target Support Files/Pods-PlantManager-PlantManagerTests/Pods-PlantManager-PlantManagerTests.release.xcconfig"; sourceTree = "<group>"; };
-		AA4016EB96F74010A8D67365 /* Jost-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Jost-Bold.ttf"; path = "../assets/fonts/Jost-Bold.ttf"; sourceTree = "<group>"; };
-		EA964DED856845159916F811 /* Jost-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Jost-SemiBold.ttf"; path = "../assets/fonts/Jost-SemiBold.ttf"; sourceTree = "<group>"; };
+		9AE582DF2634F7A60009AB31 /* PlantManager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlantManager-Bridging-Header.h"; sourceTree = "<group>"; };
+		9AE582E02634F7A70009AB31 /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
+		AA4016EB96F74010A8D67365 /* Jost-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Jost-Bold.ttf"; path = "../assets/fonts/Jost-Bold.ttf"; sourceTree = "<group>"; };
+		EA964DED856845159916F811 /* Jost-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Jost-SemiBold.ttf"; path = "../assets/fonts/Jost-SemiBold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -113,7 +116,6 @@
 				EA964DED856845159916F811 /* Jost-SemiBold.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -136,6 +138,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				9AE582E02634F7A70009AB31 /* Empty.swift */,
 				13B07FAE1A68108700A75B9A /* PlantManager */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* PlantManagerTests */,
@@ -143,6 +146,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				8AC75B3C6B2AAA43A88575FA /* Pods */,
 				266549BC46EE44F39D2F9EE9 /* Resources */,
+				9AE582DF2634F7A60009AB31 /* PlantManager-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -166,7 +170,6 @@
 				5C78A5978F9BF1C99EBF9181 /* Pods-PlantManager-PlantManagerTests.debug.xcconfig */,
 				8EA67AD8BB2D694804099FE9 /* Pods-PlantManager-PlantManagerTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -229,7 +232,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1220;
 					};
 				};
 			};
@@ -438,6 +441,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				9AE582E12634F7A70009AB31 /* Empty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +460,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5C78A5978F9BF1C99EBF9181 /* Pods-PlantManager-PlantManagerTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -483,6 +488,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8EA67AD8BB2D694804099FE9 /* Pods-PlantManager-PlantManagerTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = PlantManagerTests/Info.plist;
@@ -523,6 +529,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = PlantManager;
+				SWIFT_OBJC_BRIDGING_HEADER = "PlantManager-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -548,6 +555,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = PlantManager;
+				SWIFT_OBJC_BRIDGING_HEADER = "PlantManager-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

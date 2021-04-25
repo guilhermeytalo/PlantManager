@@ -37,13 +37,17 @@ export function PlantSelect() {
   const [environmentSelected, setEnvironmentSelected] = useState('all');
   const [ loading, setLoading] = useState(true);
 
+  const [page, setPage] = useState(1);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [loadedAll, setLoadedAll] = useState(false);
+
   function handleEnvironmentSelected(environment: string) {
 
     setEnvironmentSelected(environment);
 
-    if (environment === 'all') 
+    if (environment === 'all') {
       return setFilteredPlants(plants);
-    
+    }
 
     const filtered = plants.filter(plant =>
       plant.environments.includes(environment)
@@ -56,7 +60,7 @@ export function PlantSelect() {
     handleEnvironmentSelected('all');
   } , [plants]);
 
-
+ 
   useEffect(() => {
     async function fetchEnvironment() {
       const {data} = await api
@@ -78,12 +82,16 @@ export function PlantSelect() {
       const {data} = await api
       .get(`plants?_sort=name&_order=asc`);
       setPlants(data);
+      setLoading(false);
     }
 
     fetchPlants();
   }, []);
 
- 
+  if(loading) {
+    return <Loading />
+  }
+  
   return (
     <View style={styles.container}>
       <View style={styles.header}>
