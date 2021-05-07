@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigation } from '@react-navigation/core';
 import {
     SafeAreaView,
     StyleSheet,
@@ -10,7 +9,11 @@ import {
     Platform,
     Keyboard,
     TouchableWithoutFeedback,
+    Alert,
 } from 'react-native';
+
+import { useNavigation } from '@react-navigation/core';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { Button } from '../components/Button';
 
@@ -28,6 +31,7 @@ export function UserIdentification(){
 
     function handleInputBlur() {
         setIsFocused(false);
+        setIsFilled(!!name);
     }
 
     function handleInputFocus() {
@@ -40,7 +44,12 @@ export function UserIdentification(){
     }
 
     function handleSubmit() {
-      navigation.navigate('Confirmation');
+        if(!name) {
+           return Alert.alert('Me diz como chamar você 😢')
+        } 
+
+        AsyncStorage.setItem('@plantmanager:user', name);
+        navigation.navigate('Confirmation');
     }
 
     return(

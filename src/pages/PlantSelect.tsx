@@ -11,6 +11,7 @@ import api from '../services/api';
 
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
+import { useNavigation } from '@react-navigation/core';
 
 interface EnvironmentProps {
   key: string;
@@ -36,10 +37,12 @@ export function PlantSelect() {
   const [filteredPlants, setFilteredPlants] = useState<PlantProps[]>([]);
   const [environmentSelected, setEnvironmentSelected] = useState('all');
   const [ loading, setLoading] = useState(true);
-
+  
   const [page, setPage] = useState(1);
   const [loadingMore, setLoadingMore] = useState(false);
-  const [loadedAll, setLoadedAll] = useState(false);
+  
+  const navigation = useNavigation();
+
 
   function handleEnvironmentSelected(environment: string) {
 
@@ -87,6 +90,10 @@ export function PlantSelect() {
     fetchPlants();
   }
 
+  function handlePlantSelect(plant: PlantProps) {
+    navigation.navigate('PlantSave');
+  }
+
   useEffect(() => {
     handleEnvironmentSelected('all');
   } , [plants]);
@@ -121,14 +128,19 @@ export function PlantSelect() {
       <View style={styles.header}>
         <Header />
 
-        <Text style={styles.title}>Em qual ambiente</Text>
-        <Text style={styles.subtitle}>você quer colocar sua planta?</Text>
+        <Text style={styles.title}>
+          Em qual ambiente
+        </Text>
+        <Text style={styles.subtitle}>
+          você quer colocar sua planta?
+        </Text>
       </View>
 
       <View>
         <FlatList
           data={environments}
-          renderItem={({item}) => (
+          keyExtractor={(item) => String(item.key)}
+          renderItem={({ item }) => (
             <EnvironmentButton
               title={item.title}
               active={item.key === environmentSelected}
@@ -144,14 +156,18 @@ export function PlantSelect() {
       <View style={styles.plants}>
         <FlatList
           data={filteredPlants}
+          keyExtractor={(item) => String(item.id)}
           renderItem={({ item }) => (
-              <PlantCardPrimary data={item} />
+              <PlantCardPrimary 
+                data={item} 
+                onPress={() => handlePlantSelect(item)}
+              />
           )}
           showsVerticalScrollIndicator={false}
           numColumns={2}
           onEndReachedThreshold={0.1}
           onEndReached={({ distanceFromEnd }) => 
-              handleFetchMore(distanceFromEnd)
+            handleFetchMore(distanceFromEnd)
           }
           ListFooterComponent={
             loadingMore 
